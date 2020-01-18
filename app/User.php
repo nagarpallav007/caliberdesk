@@ -42,6 +42,7 @@ class User extends Authenticatable
     /**
      * Get the business that owns the user.
      */
+ 
     public function business()
     {
         return $this->belongsTo(\App\Business::class);

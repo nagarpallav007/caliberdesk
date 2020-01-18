@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'ultimatePOS'),
+    'name' => env('APP_NAME', 'entelify'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost/pallav/ultimatepos217/UltimatePOS-CodeBase-V2.17/public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -178,7 +178,8 @@ return [
         Milon\Barcode\BarcodeServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
         App\Providers\DropboxServiceProvider::class,
-
+        //socalite
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -233,7 +234,7 @@ return [
         'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
-        'Datatables' => Yajra\DataTables\Facades\DataTables::class
-
+        'Datatables' => Yajra\DataTables\Facades\DataTables::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ]
 ];

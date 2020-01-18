@@ -76,6 +76,13 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('lang_v1.login')</button>
                     </div>
+                
+<div class="form-group row">
+    <div class="col-md-6 offset-md-4">
+         <a href="{{ url('/login/facebook') }}" class="btn btn-facebook"> Facebook</a>
+         <a href="{{ url('/login/google') }}" class="btn btn-google-plus"> Google</a>
+    </div>
+</div>
                 </form>
                 @if(config('app.env') != 'demo')
                     <a href="{{ route('password.request') }}">

@@ -19,6 +19,17 @@
     });
 */
     Auth::routes();
+//Social Login
+
+Route::get('login/{provider}', 'SocialController@redirect');
+
+Route::get('login/{provider}/callback','SocialController@Callback');
+
+//End Social Login
+
+//Below is list of front-end URLs
+Route::get('/', 'welcomeController@index');
+//Endo Front end URLs
 
     Route::get('/business/register', 'BusinessController@getRegister')->name('business.getRegister');
     Route::post('/business/register', 'BusinessController@postRegister')->name('business.postRegister');
@@ -28,11 +39,14 @@
     Route::get('/invoice/{token}', 'SellPosController@showInvoice')
         ->name('show_invoice');
 
+        //Temp Routes
+   // Route::get('/home', 'HomeController@index')->name('home');
+   // Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 //Routes for authenticated users only
 Route::middleware([ 'auth', 'SetSessionData', 'language', 'timezone'])->group(function () {
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-
     Route::get('/home', 'HomeController@index')->name('home');
+
     Route::get('/home/get-totals', 'HomeController@getTotals');
     Route::get('/home/product-stock-alert', 'HomeController@getProductStockAlert');
     Route::get('/home/purchase-payment-dues', 'HomeController@getPurchasePaymentDues');

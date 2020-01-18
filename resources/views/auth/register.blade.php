@@ -262,6 +262,12 @@
                     <button type="button" class="btn btn-success pull-right">Register</button>
                 </div>
 
+<div class="form-group row">
+    <div class="col-md-6 offset-md-4">
+         <a href="{{ url('/login/facebook') }}" class="btn btn-facebook"> Facebook</a>
+         <a href="{{ url('/login/google') }}" class="btn btn-google-plus"> Google</a>
+    </div>
+</div>
             {!! Form::close() !!}
             
         </div>
