@@ -14,4 +14,9 @@ class welcomeController extends Controller
 
 
     }
+    public function search()
+    {
+    	$entities = array(); 
+    	return view('fronted.search', compact('entities'));
+    }
 }

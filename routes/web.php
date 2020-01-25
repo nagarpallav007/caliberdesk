@@ -29,6 +29,7 @@ Route::get('login/{provider}/callback','SocialController@Callback');
 
 //Below is list of front-end URLs
 Route::get('/', 'welcomeController@index');
+Route::post('search', 'welcomeController@search')->name('search');
 //Endo Front end URLs
 
     Route::get('/business/register', 'BusinessController@getRegister')->name('business.getRegister');
